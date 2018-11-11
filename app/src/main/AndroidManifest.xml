@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="org.fkjava">
+
+    <!-- tools:ignore="GoogleAppIndexingWarning" 表示忽略Google搜索的警告 -->
+    <!-- 在国内，并不是那么容易使用Google搜索的，所以直接忽略即可 -->
+    <!-- 也可以在build.gradle里面增加 lintOptions { disable 'GoogleAppIndexingWarning'  }  -->
+    <!-- android:allowBackup="true"表示启动应用的自动备份，此时需要提供一个自动备份的策略文件 -->
+    <application
+        android:allowBackup="true"
+        android:fullBackupContent=""
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

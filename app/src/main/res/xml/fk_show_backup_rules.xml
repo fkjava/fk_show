@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <!-- 具体文章位置 https://developer.android.google.cn/guide/topics/data/autobackup -->
+    <!-- 可用的元素为include和exclude，exclude优先。 -->
+
+    <!-- domain可选的值 -->
+    <!-- root 存储属于此应用程序的所有私有文件的文件系统上的目录。 -->
+    <!-- file 由getFilesDir（）返回的目录。 -->
+    <!-- database 由getDatabasePath（）返回的目录。 使用SQLiteOpenHelper创建的数据库存储在此处。 -->
+    <!-- sharedpref 存储SharedPreferences的目录。 -->
+    <!-- external 由getExternalFilesDir（）返回的目录 -->
+    <!-- 除了这5个位置之外其他的数据，不能被自动备份 -->
+    <include
+        domain="file"
+        path="." />
+</full-backup-content>
