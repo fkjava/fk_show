@@ -1,0 +1,41 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    
+    repositories {
+        google()
+        jcenter()
+
+        def REPOSITORY_URL = 'http://127.0.0.1:8081/nexus/repository/maven-public/'
+        all { ArtifactRepository repo ->
+            if(repo instanceof MavenArtifactRepository){
+                def url = repo.url.toString()
+                if (url.startsWith('https:') || url.startsWith('http:')) {
+                    println "Repository ${url} replaced by $REPOSITORY_URL."
+                    repo.setUrl( REPOSITORY_URL )
+                }
+            }
+        }
+        maven {
+            url REPOSITORY_URL
+        }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.2.1'
+        
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
