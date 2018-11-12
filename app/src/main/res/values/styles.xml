@@ -1,11 +1,19 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+
+    <!--
+    Base.Theme.AppCompat.Light.DarkActionBar跟Theme.AppCompat.Light.DarkActionBar是一样的。
+    事实上，后者继承了前者，内容完全一样，只是一些早的构建工具，会不认识后者。
+    在无法识别主题的时候，表现在无法在设计工具里面使用约束布局。
+    -->
+    <style name="AppTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <!-- 隐藏窗口标题 -->
+        <item name="windowNoTitle">true</item>
     </style>
 
 </resources>
